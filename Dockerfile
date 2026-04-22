@@ -18,5 +18,6 @@ WORKDIR /app
 COPY-from-publish/app/publish
 #Expose port (Render will set PORT env var)
 EXPOSE 8080
-ENV ASPNETCORE_URLS-http://+:8080
+# Change your ENV line to this:
+ENV ASPNETCORE_URLS=http://+:${PORT:-8080}
 ENTRYPOINT ["dotnet", "HOLLOW_OCTAGONAL_PYRAMID_CALCULATOR.dll"]
